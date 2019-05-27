@@ -21,7 +21,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function home()
     {
         return view('home');
     }
@@ -29,6 +29,11 @@ class HomeController extends Controller
     public function writer()
     {
         return view('writer.dashboard');
+    }
+
+    public function index()
+    {
+        return view('main.index');
     }
 
 }
