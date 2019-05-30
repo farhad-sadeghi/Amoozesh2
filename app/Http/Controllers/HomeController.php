@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\About;
+use App\Ourteam;
+use App\Advantage;
 
 class HomeController extends Controller
 {
@@ -31,9 +34,9 @@ class HomeController extends Controller
         return view('writer.dashboard');
     }
 
-    public function index()
+    public function index(About $about,Ourteam $ourteam,Advantage $advantage)
     {
-        return view('main.index');
+        return view('main.index',compact('about','ourteam','advantage'));
     }
 
 }
