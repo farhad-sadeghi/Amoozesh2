@@ -1,3 +1,4 @@
+@inject('sale', 'App\Sale')
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 	    <div class="navbar-header">
@@ -7,7 +8,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	           <a class="navbar-brand" href="index.html">آموزشگاه</a>
+	           <a class="navbar-brand" href="{{route('index')}}">رایان رهجو</a>
 	    </div>
 	    <!--/.navbar-header-->
 	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
@@ -16,12 +17,7 @@
 		                  <a href="login.html"><i class="fa fa-user"></i><span>ورود</span></a>
 		        </li>
 		         <li class="dropdown">
-		         	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i><span>دوره ها</span></a>
-		        	   <ul class="dropdown-menu">
-			            <li><a href="courses.html">دوره های دسته بندی ها</a></li>
-			            <li><a href="courses.html">لیست دوره های آموزشی</a></li>
-			            <li><a href="courses.html">دوره جزئیات</a></li>
-		              </ul>
+		         	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i><span>سبد خرید</span></a>
 		        </li>
 		         <li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar"></i><span>رویداد ها</span></a>
@@ -68,7 +64,7 @@
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
-            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="{{route('index')}}">صفحه اصلی</a></li>
             <li><a href="about.html">درباره ما</a></li>
     		<li class="dropdown mega-dropdown active">
 			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">پذیرش<span class="caret"></span></a>
@@ -107,16 +103,20 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">برنامه ها<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="terms.html">شرایط استفاده </a></li>
-                <li><a href="shortcodes.html">کد های کوتاه</a></li>
-                <li><a href="faq.html">سوالات متداول</a></li>
+
+
+							 @foreach($sale->all() as $salee)
+
+                <li><a href="{{route('sale',$salee->id)}}"> {{$salee->name}} </a></li>
+
+              @endforeach
               </ul>
             </li>
-             <li><a href="services.html">خدمات</a></li>
+             <li><a href="{{route('service')}}">خدمات</a></li>
             <li><a href="features.html">ویزگی ها</a></li>
             <li><a href="blog.html">وبلاگ</a></li>
             <li><a href="career.html">حرفه</a></li>
-            <li class="last"><a href="contact.html">تماس با ما</a></li>
+            <li class="last"><a href="{{route('contact')}}">تماس با ما</a></li>
         </ul>
      </div><!-- /.navbar-collapse -->
    </div>

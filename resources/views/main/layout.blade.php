@@ -17,6 +17,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
 <!-- Custom Theme files -->
 <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="{{asset('css/jquery.countdown.css')}}" />
@@ -39,12 +40,30 @@ $(document).ready(function(){
     );
 });
 </script>
+<link rel="stylesheet" href="{{asset('css/clndr.css')}}" type="text/css" />
+<script src="{{asset('js/underscore-min.js')}}" type="text/javascript"></script>
+<script src= "{{asset('js/moment-2.2.1.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/clndr.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/site.js')}}" type="text/javascript"></script>
 </head>
 <body>
 
 <!-- banner -->
 @include('partial.navigate')
 	<!-- //banner -->
+
+  <div class="courses_banner">
+    <div class="container">
+      <h3>رایان رهجو</h3>
+    <p></p>
+        <div class="breadcrumb1">
+            <!-- <ul>
+                  <li class="icon6"><a href="index.html">صفحه اصلی</a></li>
+                <li class="current-page">درباره ما</li>
+            </ul> -->
+        </div>
+    </div>
+  </div>
 
 @yield('content')
 

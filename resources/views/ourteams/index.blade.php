@@ -36,7 +36,7 @@
                                 <tbody>
                                 @foreach($ourteams as $item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $loop->iteration}}</td>
                                         <td>{{ $item->name }}</td><td>{{ $item->major }}</td><td>{{ $item->picture }}</td>
                                         <td>
                                             <a href="{{ url('/ourteams/' . $item->id) }}" title="View Ourteam"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>

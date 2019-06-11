@@ -25,6 +25,28 @@
                               advantages
                                 </a>
                             </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" href="{{route('contacts.index')}}">
+                              contacts
+                                </a>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                  <a class="nav-link" href="{{route('services.index')}}">
+                                services
+                                  </a>
+                              </li>
+                              <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="{{route('sales.index')}}">
+                                  sales
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                      <a class="nav-link" href="{{route('types.index')}}">
+                                    types
+                                      </a>
+                                  </li>
+
 
                     </ul>
                 </div>

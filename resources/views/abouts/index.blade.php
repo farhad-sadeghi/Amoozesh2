@@ -39,7 +39,7 @@
                                 <tbody>
                                 @foreach($abouts as $item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $loop->iteration}}</td>
                                         <td>{{ $item->header }}</td><td>{{ $item->text }}</td><td></td>
                                         <td>
                                             <a href="{{ url('/abouts/' . $item->id) }}" title="View About"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>

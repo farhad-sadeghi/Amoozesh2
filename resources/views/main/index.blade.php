@@ -2,22 +2,6 @@
 @section('content')
 
 
-
-<div class="courses_banner">
-  <div class="container">
-    <!-- <h3>About</h3> -->
-    <p class="description">
-      </p>
-      <!-- <div class="breadcrumb1">
-          <ul>
-              <li class="icon6"><a href="index.html">Home</a></li>
-              <li class="current-page">About</li>
-          </ul>
-      </div> -->
-  </div>
-</div>
-
-
 @foreach($about->all() as $abouts)
 
 <div class="courses_box1">
@@ -93,7 +77,7 @@
     </div>
      </div>
      @endforeach
-     
+
      <div class="clearfix"> </div>
   </div>
 </div>
