@@ -46,6 +46,11 @@
                                     types
                                       </a>
                                   </li>
+                                  <li class="nav-item" role="presentation">
+                                        <a class="nav-link" href="{{route('emails.index')}}">
+                                      emails
+                                        </a>
+                                    </li>
 
 
                     </ul>

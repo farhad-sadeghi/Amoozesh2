@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Type;
 use App\Sale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Schema;
+use App\Mail\EmailSubscribe;
+use App\Email;
 
 class TypesController extends Controller
 {
@@ -55,7 +57,7 @@ class TypesController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(Request $request,Email $email)
     {
         $this->validate($request, [
       'picture' => ['mimes:jpeg,jpg,png,gif','max:500','required'],
@@ -64,6 +66,8 @@ class TypesController extends Controller
       'text' => ['nullable'],
 			'sale_id' => 'required'
 		]);
+
+
     $type = new Type();
     $fields = collect(Schema::getColumnListing('types'));
     foreach ($fields as $field) {
@@ -73,8 +77,13 @@ class TypesController extends Controller
     }
     $type->picture = $request->file('picture')->store('public');
     $type->save();
+    foreach ($email->all() as $emails) {
 
+        Mail::to($emails->name)->send(new EmailSubscribe($request->name,$type->picture,$request->text));
+
+    }
     return redirect('types')->with('flash_message', 'Type added!');
+
     }
 
     /**
@@ -135,7 +144,6 @@ class TypesController extends Controller
         }
       }
     $type->save();
-
     return redirect('types')->with('flash_message', 'Type updated!');
     }
 

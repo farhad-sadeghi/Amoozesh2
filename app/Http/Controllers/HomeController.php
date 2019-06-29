@@ -66,18 +66,6 @@ class HomeController extends Controller
         return view('main.services',compact('service'));
     }
 
-    public function sale($id)
-    {
-        $sale1=Sale::findOrFail($id);
-        $type = $sale1->types()->paginate(1);
-        return view('main.sale',compact('type'));
-    }
-
-    public function detail($id)
-    {
-      $type=Type::findOrFail($id);
-      return view('main.detail',compact('type'));
-    }
 
     public function cart()
     {
