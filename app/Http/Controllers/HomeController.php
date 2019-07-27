@@ -38,9 +38,9 @@ class HomeController extends Controller
         return view('writer.dashboard');
     }
 
-    public function about(About $abouts,Ourteam $ourteam,Advantage $advantages,Sale $sale)
+    public function about(About $abouts,Ourteam $ourteams,Advantage $advantages,Sale $sale)
     {
-        return view('main.shop.about',compact('abouts','ourteam','advantages','sale'));
+        return view('main.shop.about',compact('abouts','ourteams','advantages','sale'));
     }
 
     public function contact()
