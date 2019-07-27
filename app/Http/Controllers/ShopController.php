@@ -50,7 +50,7 @@ class ShopController extends Controller
       'name' => 'required|email||unique:emails'
     ]);
 
-   $contact= new Email();
+    $contact= new Email();
     $contact->name = $request->name;
     $contact->save();
     return back()->with('email', 'ایمیل شما با موفقیت ثبت شد');
