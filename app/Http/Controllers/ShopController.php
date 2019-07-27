@@ -146,6 +146,7 @@ class ShopController extends Controller
        $ad=Address::where('transactionId','=',$transaction_id)->firstOrFail();
        $ad->status=1;
        $ad->save();
+       \Cart::clear();
 
     return redirect()->route('sale');
   }
@@ -161,6 +162,7 @@ class ShopController extends Controller
       $add=Address::where('transactionId','=',$request->Authority)->firstOrFail();
       if ($request->Status == 'NOK') {
         $add->delete();
+         \Cart::clear();
       }
        return view('main.shop.thankyou',compact('carts','c'));
   }

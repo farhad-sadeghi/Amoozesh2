@@ -28,7 +28,6 @@ class CreateAddressesTable extends Migration
             $table->integer('number')->nullable();
             $table->string('price')->nullable();
             $table->string('transactionId')->nullable();
-            $table->string('status2')->nullable();
             $table->boolean('status')->nullable();
             });
     }
