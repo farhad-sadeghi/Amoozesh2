@@ -51,6 +51,11 @@
                                       emails
                                         </a>
                                     </li>
+                                    <li class="nav-item" role="presentation">
+                                          <a class="nav-link" href="{{route('addresses.index')}}">
+                                        addresses
+                                          </a>
+                                      </li>
 
 
                     </ul>

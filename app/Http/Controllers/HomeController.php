@@ -40,12 +40,16 @@ class HomeController extends Controller
 
     public function about(About $abouts,Ourteam $ourteams,Advantage $advantages,Sale $sale)
     {
-        return view('main.shop.about',compact('abouts','ourteams','advantages','sale'));
+        $c = \Cart::getSubTotal();
+        $carts = \Cart::getContent();
+        return view('main.shop.about',compact('abouts','ourteams','advantages','sale','c','carts'));
     }
 
     public function contact()
     {
-        return view('main.shop.contact');
+         $c = \Cart::getSubTotal();
+         $carts = \Cart::getContent();
+         return view('main.shop.contact',compact('c','carts'));
     }
 
 

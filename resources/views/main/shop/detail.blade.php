@@ -24,7 +24,11 @@
           </div>
 
         </div>
-        <div class="col-md-6">
+
+  <div class="col-md-6">
+        <form  action="{{route('cart_add',$type->id)}}" method="post">
+        @csrf
+
           <h2 class="text-black">{{$type->name}}</h2>
 
           <p>{{$type->text}}</p>
@@ -36,16 +40,19 @@
             <div class="input-group-prepend">
               <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
             </div>
-            <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <input name="number" type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
             <div class="input-group-append">
               <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
             </div>
           </div>
 
           </div>
-          <p><a href="cart.html" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a></p>
+          <p><input type="submit" href="cart.html" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" value="اضافه به سبد خرید"></p>
 
-        </div>
+
+</form>
+</div>
+
       </div>
     </div>
   </div>
