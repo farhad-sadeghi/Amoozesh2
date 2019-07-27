@@ -41,7 +41,7 @@
           <div class="d-flex align-items-center justify-content-between">
             <div class="logo">
               <div class="site-logo">
-                <a href="{{route('index')}}" class="js-logo-clone"> rayan rahjoo</a>
+                <a href="{{route('sale')}}" class="js-logo-clone"> rayan rahjoo</a>
               </div>
             </div>
             <div class="main-nav d-none d-lg-block">
@@ -101,12 +101,12 @@
              </div>
              <div class="col-md-6 col-lg-4">
                <ul class="list-unstyled">
-                 <li><a href="#">درباره ی ما </a></li>
+                 <li><a href="{{route('about')}}">درباره ی ما </a></li>
                </ul>
              </div>
              <div class="col-md-6 col-lg-4">
                <ul class="list-unstyled">
-                 <li><a href="#">تماس با ما</a></li>
+                 <li><a href="{{route('contact')}}">تماس با ما</a></li>
                </ul>
              </div>
              <div class="col-md-6 col-lg-4">
@@ -166,9 +166,9 @@
     <script src="{{asset('js2/aos.js')}}"></script>
     <script src="{{asset('js2/main.js')}}"></script>
     <script src="{{asset('js2/sweetalert.js') }}"></script>
-    @if( session('search') || session('email'))
+    @if( session('search') || session('email') || session('contact'))
     @include('partial.javascript')
-
     @endif
+
     </body>
   </html>

@@ -38,27 +38,34 @@ class HomeController extends Controller
         return view('writer.dashboard');
     }
 
-    public function index(About $about,Ourteam $ourteam,Advantage $advantage,Sale $sale)
+    public function about(About $abouts,Ourteam $ourteam,Advantage $advantages,Sale $sale)
     {
-        return view('main.index',compact('about','ourteam','advantage','sale'));
+        return view('main.shop.about',compact('abouts','ourteam','advantages','sale'));
     }
 
     public function contact()
     {
-        $contacts = Contact::where('role', 0)->get();
-        return view('main.contact',compact('contacts'));
+        return view('main.shop.contact');
     }
 
 
     public function contact2(Request $request)
     {
+
+      $this->validate($request, [
+    'name' => 'required',
+    'email' => ['required','email'],
+    'phone' => ['required'],
+    'text' => ['required'],
+  ]);
+
       $contact= new Contact();
       $contact->name = $request->name;
       $contact->email = $request->email;
+      $contact->phone = $request->phone;
       $contact->text = $request->text;
-      $contact->role = 1;
       $contact->save();
-      return back();
+      return back()->with('contact', 'اطلاعات شما با موفقیت ارسال شد');
     }
 
     public function service(Service $service)

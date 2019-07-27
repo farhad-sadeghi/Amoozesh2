@@ -7,7 +7,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Contact extends Model
 {
-    
+
 
     /**
      * The database table used by the model.
@@ -28,7 +28,7 @@ class Contact extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'phone', 'text', 'role'];
+    protected $fillable = ['name', 'email', 'phone', 'text'];
 
 
 

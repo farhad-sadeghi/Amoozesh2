@@ -19,7 +19,6 @@ class CreateContactsTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->text('text')->nullable();
-            $table->boolean('role')->nullable()->default(0);
             });
     }
 
