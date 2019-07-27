@@ -30,12 +30,6 @@
                               contacts
                                 </a>
                             </li>
-
-                            <li class="nav-item" role="presentation">
-                                  <a class="nav-link" href="{{route('services.index')}}">
-                                services
-                                  </a>
-                              </li>
                               <li class="nav-item" role="presentation">
                                     <a class="nav-link" href="{{route('sales.index')}}">
                                   sales

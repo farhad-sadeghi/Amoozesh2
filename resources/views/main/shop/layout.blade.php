@@ -168,12 +168,16 @@
     <script src="{{asset('js2/sweetalert.js') }}"></script>
 
 
-    @if( session('search') || session('email'))
-    @include('partial.javascript')
-    @endif
-
-    @if( session('add_cart'))
-    @include('partial.javascript2')
+    @if(session('search'))
+    @include('partial.searchscript')
+    @elseif(session('email'))
+    @include('partial.emailscript')
+    @elseif(session('contact'))
+    @include('partial.contactscript')
+    @elseif(session('add_cart'))
+    @include('partial.addscript')
+    @elseif($errors)
+    @include('partial.errorscript')
     @endif
 
     </body>

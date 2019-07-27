@@ -54,7 +54,6 @@ Route::resource('abouts', 'AboutsController');
 Route::resource('ourteams', 'OurteamsController');
 Route::resource('advantages', 'AdvantagesController');
 Route::resource('contacts', 'ContactsController');
-Route::resource('services', 'ServicesController');
 Route::resource('sales', 'SalesController');
 Route::resource('types', 'TypesController');
 Route::resource('emails', 'EmailsController');
