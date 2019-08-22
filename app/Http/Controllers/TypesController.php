@@ -82,7 +82,7 @@ class TypesController extends Controller
         Mail::to($emails->name)->send(new EmailSubscribe($request->name,$type->picture,$request->text));
 
     }
-    return redirect('types')->with('flash_message', 'Type added!');
+    return redirect('types')->with('flash_message', 'ثبت با موفقیت انجام شد');
 
     }
 
@@ -144,7 +144,7 @@ class TypesController extends Controller
         }
       }
     $type->save();
-    return redirect('types')->with('flash_message', 'Type updated!');
+    return redirect('types')->with('flash_message', 'تغییر با موفقیت انجام شد');
     }
 
     /**
@@ -160,6 +160,6 @@ class TypesController extends Controller
       unlink("storage/$type->picture");
       Type::destroy($id);
 
-      return redirect('types')->with('flash_message', 'Type deleted!');
+      return redirect('types')->with('flash_message', 'حذف با موفقیت انجام شد');
     }
 }

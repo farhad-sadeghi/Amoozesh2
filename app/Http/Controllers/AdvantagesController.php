@@ -59,7 +59,7 @@ class AdvantagesController extends Controller
 
         Advantage::create($requestData);
 
-        return redirect('advantages')->with('flash_message', 'Advantage added!');
+        return redirect('advantages')->with('flash_message', 'ثبت با موفقیت انجام شد');
     }
 
     /**
@@ -109,7 +109,7 @@ class AdvantagesController extends Controller
         $advantage = Advantage::findOrFail($id);
         $advantage->update($requestData);
 
-        return redirect('advantages')->with('flash_message', 'Advantage updated!');
+        return redirect('advantages')->with('flash_message', 'تغییر با موفقیت انجام شد');
     }
 
     /**
@@ -123,6 +123,6 @@ class AdvantagesController extends Controller
     {
         Advantage::destroy($id);
 
-        return redirect('advantages')->with('flash_message', 'Advantage deleted!');
+        return redirect('advantages')->with('flash_message', 'حذف با موفقیت انجام شد');
     }
 }

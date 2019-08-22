@@ -69,7 +69,7 @@ class AboutsController extends Controller
         $about->picture = $request->file('picture')->store('public');
         $about->save();
 
-        return redirect('abouts')->with('flash_message', 'About added!');
+        return redirect('abouts')->with('flash_message', 'ثبت با موفقیت انجام شد');
     }
 
     /**
@@ -127,7 +127,7 @@ class AboutsController extends Controller
           }
         $about->save();
 
-        return redirect('abouts')->with('flash_message', 'About updated!');
+        return redirect('abouts')->with('flash_message', 'تغییر با موفقیت انجام شد');
     }
 
     /**
@@ -143,6 +143,6 @@ class AboutsController extends Controller
         unlink("storage/$about->picture");
         About::destroy($id);
 
-        return redirect('abouts')->with('flash_message', 'About deleted!');
+        return redirect('abouts')->with('flash_message', 'حذف با موفقیت انجام شد');
     }
 }

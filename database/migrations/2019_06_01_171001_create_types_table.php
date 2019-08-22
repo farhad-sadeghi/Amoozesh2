@@ -18,9 +18,6 @@ class CreateTypesTable extends Migration
             $table->string('picture')->nullable();
             $table->string('name')->nullable();
             $table->integer('price')->nullable();
-            $table->string('property1')->nullable();
-            $table->string('property2')->nullable();
-            $table->string('property3')->nullable();
             $table->text('text')->nullable();
             $table->integer('sale_id')->unsigned()->index();
             $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade');

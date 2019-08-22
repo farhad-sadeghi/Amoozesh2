@@ -56,7 +56,7 @@ class EmailsController extends Controller
 
         Email::create($requestData);
 
-        return redirect('emails')->with('email', 'Email added!');
+        return redirect('emails')->with('email', 'ثبت با موفقیت انجام شد');
     }
 
     /**
@@ -105,7 +105,7 @@ class EmailsController extends Controller
         $email = Email::findOrFail($id);
         $email->update($requestData);
 
-        return redirect('emails')->with('flash_message', 'Email updated!');
+        return redirect('emails')->with('flash_message', 'تغییر با موفقیت انجام د');
     }
 
     /**
@@ -119,6 +119,6 @@ class EmailsController extends Controller
     {
         Email::destroy($id);
 
-        return redirect('emails')->with('flash_message', 'Email deleted!');
+        return redirect('emails')->with('flash_message', 'حذف با موفقیت انجام شد');
     }
 }

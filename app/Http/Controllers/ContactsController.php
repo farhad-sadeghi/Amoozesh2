@@ -61,7 +61,7 @@ class ContactsController extends Controller
 
         Contact::create($requestData);
 
-        return redirect('contacts')->with('flash_message', 'Contact added!');
+        return redirect('contacts')->with('flash_message', 'ثبت با موفقیت انجام شد');
     }
 
     /**
@@ -111,7 +111,7 @@ class ContactsController extends Controller
         $contact = Contact::findOrFail($id);
         $contact->update($requestData);
 
-        return redirect('contacts')->with('flash_message', 'Contact updated!');
+        return redirect('contacts')->with('flash_message', 'تغییر با موفقیت انجام شد');
     }
 
     /**
@@ -125,6 +125,6 @@ class ContactsController extends Controller
     {
         Contact::destroy($id);
 
-        return redirect('contacts')->with('flash_message', 'Contact deleted!');
+        return redirect('contacts')->with('flash_message', 'حذف با موفقیت انجام شد');
     }
 }

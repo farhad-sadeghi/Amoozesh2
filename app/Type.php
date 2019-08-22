@@ -1,12 +1,17 @@
 <?php
 
 namespace App;
-
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Type extends Model
 {
+
+
+
+     use Cachable;
+
 
 
     /**
@@ -54,4 +59,52 @@ class Type extends Model
         $this->attributes['picture'] = substr($value,7);
 
     }
+    /**
+     * [types_paginate description]
+     * @param [type] $id [description]
+     */
+  static  public function types_paginate($id)
+    {
+        $carts = \Cart::getContent();
+        $sale1=Sale::findOrFail($id);
+        $type = $sale1->types()->paginate(2);
+        return view('main.sale',compact('type','sale1','carts'));
+    }
+
+      /**
+       * [show_detail description]
+       * @param [type] $id [description]
+       */
+    static  public function show_detail($id)
+      {
+        $carts = \Cart::getContent();
+        $type=Type::findOrFail($id);
+        return view('main.detail',compact('type','carts'));
+      }
+
+      /**
+       * [show_search description]
+       * @param [type] $request [description]
+       */
+      static public function show_search($request)
+      {
+        $carts = \Cart::getContent();
+        $type =Type::where('name','LIKE',"%{$request->search}%")->paginate(6);
+
+        if (count($type) != 0)
+        {
+            return view('main.search',compact('type','carts'));
+
+        }
+        else{
+
+            return back()->with('error','موردی یافت نشد');
+        }
+      }
+
+
+
+
+
+
 }

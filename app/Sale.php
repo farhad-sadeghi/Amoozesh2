@@ -1,14 +1,14 @@
 <?php
 
 namespace App;
-
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Sale extends Model
 {
 
-
+   use Cachable;
     /**
      * The database table used by the model.
      *

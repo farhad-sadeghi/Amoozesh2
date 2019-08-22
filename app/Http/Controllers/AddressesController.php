@@ -75,10 +75,10 @@ class AddressesController extends Controller
 			'status' => 'required'
 		]);
         $requestData = $request->all();
-        
+
         Address::create($requestData);
 
-        return redirect('addresses')->with('flash_message', 'Address added!');
+        return redirect('addresses')->with('flash_message', 'ثبت با موفقیت انجام شد');
     }
 
     /**
@@ -133,11 +133,11 @@ class AddressesController extends Controller
 			'status' => 'required'
 		]);
         $requestData = $request->all();
-        
+
         $address = Address::findOrFail($id);
         $address->update($requestData);
 
-        return redirect('addresses')->with('flash_message', 'Address updated!');
+        return redirect('addresses')->with('flash_message', 'تغییر با موفقیت انجام شد');
     }
 
     /**
@@ -151,6 +151,6 @@ class AddressesController extends Controller
     {
         Address::destroy($id);
 
-        return redirect('addresses')->with('flash_message', 'Address deleted!');
+        return redirect('addresses')->with('flash_message', 'حذف با موفقیت انجام شد');
     }
 }

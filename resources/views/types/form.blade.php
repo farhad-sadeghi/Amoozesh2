@@ -13,21 +13,6 @@
     {!! Form::number('price', null, ('required' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
     {!! $errors->first('price', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group{{ $errors->has('property1') ? 'has-error' : ''}}">
-    {!! Form::label('property1', 'Property1', ['class' => 'control-label']) !!}
-    {!! Form::text('property1', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
-    {!! $errors->first('property1', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="form-group{{ $errors->has('property2') ? 'has-error' : ''}}">
-    {!! Form::label('property2', 'Property2', ['class' => 'control-label']) !!}
-    {!! Form::text('property2', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
-    {!! $errors->first('property2', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="form-group{{ $errors->has('property3') ? 'has-error' : ''}}">
-    {!! Form::label('property3', 'Property3', ['class' => 'control-label']) !!}
-    {!! Form::text('property3', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
-    {!! $errors->first('property3', '<p class="help-block">:message</p>') !!}
-</div>
 <div class="form-group{{ $errors->has('property3') ? 'has-error' : ''}}">
     {!! Form::label('text', 'text', ['class' => 'control-label']) !!}
     {!! Form::textarea('text', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}

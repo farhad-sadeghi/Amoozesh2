@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','city','state','post_code','addres','phone',
     ];
 
     /**
@@ -36,4 +36,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    static  public function user_update($id, $request)
+    {
+      $find =User::findOrFail($id);
+      $find->update($request->all());
+      $find->save();
+    }
 }

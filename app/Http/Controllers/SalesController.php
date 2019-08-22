@@ -57,7 +57,7 @@ class SalesController extends Controller
 
         Sale::create($requestData);
 
-        return redirect('sales')->with('flash_message', 'Sale added!');
+        return redirect('sales')->with('flash_message', 'ثبت با موفقیت انجام شد');
     }
 
     /**
@@ -106,7 +106,7 @@ class SalesController extends Controller
         $sale = Sale::findOrFail($id);
         $sale->update($requestData);
 
-        return redirect('sales')->with('flash_message', 'Sale updated!');
+        return redirect('sales')->with('flash_message', 'تغییر با موفقیت انجام شد');
     }
 
     /**
@@ -120,6 +120,6 @@ class SalesController extends Controller
     {
         Sale::destroy($id);
 
-        return redirect('sales')->with('flash_message', 'Sale deleted!');
+        return redirect('sales')->with('flash_message', 'حذف با موفقیت انجام شد');
     }
 }

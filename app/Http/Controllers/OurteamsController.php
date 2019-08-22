@@ -69,7 +69,7 @@ class OurteamsController extends Controller
     $about->picture = $request->file('picture')->store('public');
     $about->save();
 
-        return redirect('ourteams')->with('flash_message', 'Ourteam added!');
+        return redirect('ourteams')->with('flash_message', 'ثبت با موفقیت انجام شد');
     }
 
     /**
@@ -127,7 +127,7 @@ class OurteamsController extends Controller
       }
     $about->save();
 
-        return redirect('ourteams')->with('flash_message', 'Ourteam updated!');
+        return redirect('ourteams')->with('flash_message', 'تغییر با موفقیت انجام شد');
     }
 
     /**
@@ -143,6 +143,6 @@ class OurteamsController extends Controller
       unlink("storage/$about->picture");
       Ourteam::destroy($id);
 
-        return redirect('ourteams')->with('flash_message', 'Ourteam deleted!');
+        return redirect('ourteams')->with('flash_message', 'حذف با موفقیت انجام شد');
     }
 }
