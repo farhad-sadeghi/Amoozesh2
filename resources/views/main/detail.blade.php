@@ -70,7 +70,7 @@
                   <img src="{{asset("storage/$type->picture")}}" alt="Image" class="img-fluid">
                 </a>
                 <h2 class="item-title"><a href="#"> {{$type->name}}</a></h2>
-                <strong class="item-price">{{$type->price}} تومان</strong>
+                <strong class="item-price" style="color:red;">{{$type->price}} تومان</strong>
                 <div class="star-rating">
                   <span class="icon-star2 text-warning"></span>
                   <span class="icon-star2 text-warning"></span>

@@ -102,7 +102,7 @@
          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
            <p>رایان رهجو</p>
            <a href="#" class="block-6">
-             <img src="{{asset('images2/about_1.jpg')}}" alt="Image placeholder" class="img-fluid rounded mb-4">
+             <img src="{{asset('images2/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg')}}" alt="Image placeholder" class="img-fluid rounded mb-4">
              <h3 class="font-weight-light  mb-0">بهترین محصولات را از رایان رهجو خریداری کنید</h3>
              <p>06642530342</p>
            </a>
@@ -149,7 +149,7 @@
            <div class="block-7">
              <form action="{{route('email_insert')}}" method="post">
                @csrf
-               <label for="email_subscribe" class="footer-heading">اشتراک</label>
+               <label for="email_subscribe" class="footer">اشتراک</label>
                <div class="form-group">
                  <input type="name" name="name" class="form-control py-4" id="email_subscribe" placeholder="ایمیل" required>
                  <input type="submit" class="btn btn-sm btn-primary" value="ارسال">

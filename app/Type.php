@@ -67,7 +67,7 @@ class Type extends Model
     {
         $carts = \Cart::getContent();
         $sale1=Sale::findOrFail($id);
-        $type = $sale1->types()->paginate(2);
+        $type = $sale1->types()->paginate(6);
         return view('main.sale',compact('type','sale1','carts'));
     }
 

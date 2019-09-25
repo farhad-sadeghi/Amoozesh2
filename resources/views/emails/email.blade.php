@@ -149,7 +149,7 @@
 													<td>
 														<a href="{{route('sale')}}">فروشگاه</a>
 														&nbsp;&nbsp;&nbsp;&nbsp;
-                            	<a href="{{route('index')}}"> اموزشگاه </a>
+                            	<a href="{{route('about')}}"> درباره ی ما </a>
 														&nbsp;&nbsp;&nbsp;&nbsp;
 	                          <a href="{{route('contact')}}"> تماس با ما</a>
 														&nbsp;&nbsp;&nbsp;&nbsp;
