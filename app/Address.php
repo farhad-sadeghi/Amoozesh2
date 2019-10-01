@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -10,7 +11,7 @@ class Address extends Model
 {
 
 
-  
+
     /**
      * The database table used by the model.
      *
@@ -31,6 +32,11 @@ class Address extends Model
      * @var array
      */
     protected $fillable = ['name', 'family', 'state', 'city', 'addres', 'phone', 'post_code', 'email', 'text', 'product', 'number', 'price', 'status'];
+
+
+    protected $hidden = [
+       'transactionId',
+    ];
 
 
 
@@ -103,7 +109,7 @@ class Address extends Model
                           $address->product = $cart->name;
                           $address->price = $cart->price;
                           $address->number = $cart->quantity;
-                          $address->transactionId= $transactionId ;
+                          $address->transactionId=Hash::make($transactionId) ;
                           $address->save();
                   }
       }
@@ -114,10 +120,14 @@ class Address extends Model
        */
       static public function address_active($transaction_id)
       {
-          $ad=Address::where('transactionId','=',$transaction_id)->firstOrFail();
-           $ad->status=1;
-           $ad->save();
-           \Cart::clear();
+          $add=Address::where('status','==', 0)->get();
+          foreach ($add as $value) {
+            if ( Hash::check($transaction_id, $value->transactionId)) {
+              $value->status=1;
+              $value->save();
+              \Cart::clear();
+          }
+        }
       }
 
 
@@ -132,12 +142,17 @@ class Address extends Model
             if ($c == 0) {
               return back();
             }
-
-            $add=Address::where('transactionId','=',$request->Authority)->firstOrFail();
-            if ($request->Status == 'NOK') {
-              $add->delete();
-               \Cart::clear();
+          $add=Address::where('status','==', 0)->get();
+          foreach ($add as $value) {
+            if ( Hash::check($request->Authority, $value->transactionId)) {
+              if ($request->Status == 'NOK') {
+                  $value->delete();
+                  \Cart::clear();
             }
+          }
+        }
+
+
              return view('main.thankyou',compact('carts','c'));
         }
 

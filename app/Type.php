@@ -21,6 +21,7 @@ class Type extends Model
      */
     protected $table = 'types';
 
+
     /**
     * The database primary key value.
     *

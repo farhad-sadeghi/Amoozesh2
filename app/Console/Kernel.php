@@ -26,6 +26,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        // حذف ادرس هایی که وضعیت ان ها صفر است
     }
 
     /**
